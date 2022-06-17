@@ -158,6 +158,21 @@ STEP 4 MONGODB DATABASE installation
  - Update index.js file and then run comand node index.js to  connect to MongoDb.
  ![](image/project3_connectMongoDb.png)
 
+- Download and install postman on your machine
+- Open Postman and Create a POST request to the API
+    - Set header key *Content-Type*  then Value as *application/json*
+    - Create your data input '{"action": "enter data to store in here or send here"}'  
+
+![](image/project3_Postman_post.png) 
+- Open Postman and Create a GET request to the API
+    - Set header key *Content-Type*  then Value as *application/json*  
+
+![](image/project3_postmanGet.png)  
+
+- Open Postman and Create a DELETE request to the API
+    - Set header key *Content-Type*  then Value as *application/json*  
+    
+![](image/project3_postmanDelete.png)
 
 
 

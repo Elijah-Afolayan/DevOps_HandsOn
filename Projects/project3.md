@@ -341,4 +341,4 @@ Then paste the related code into App.css: and Exit
 
 - Assuming no errors when saving all these files, our To-Do app should be ready and fully functional with the functionality discussed earlier: creating a task, deleting a task and viewing all your tasks.
 
-![](image/project3_app_codeSetup.png)
+![](image/Project3_app_web_interface.png)

@@ -1,5 +1,7 @@
 AUX PROJECT 1: SHELL SCRIPTING
-Spinup a server instance in AWS and connect to it via SSH. Then  update the instance ready for implimentation.  
+Spinup a server instance in AWS and connect to it via SSH. Then  update the instance ready for implimentation.
+
+![](image/project1Aux_ec2.png)
 
 1. Create the project folder called Shell  
 `mkdir Shell`  
@@ -8,7 +10,11 @@ Spinup a server instance in AWS and connect to it via SSH. Then  update the inst
 3. Create a csv file name names.csv  
 `touch names.csv`  
 4. Open the names.csv file  
-`vim names.csv`
+`vim names.csv`  
+
+![](image/project1Aux_Command.png)
+
+![](image/project1Aux_Names_write.png)
 
 Criterial for the script
 
@@ -27,13 +33,37 @@ Before Deploying your script, you will need to update your current user with the
 - In your current home directory change directoy to **.ssh folder**  
   - cd .ssh  
 
+**Note the instead of creating another or importing another public key you can actually access the public key of your current user on `/home/ubuntu/.ssh/authorized_keys` Hence you can skip below steps**
+
 - create a file for the public key
   - touch id_rsa.pub
 
-- Open the file using your favorite editor and paste in the public key
+- Optional -Open the file using your favorite editor and paste in the public key
   - vi id_rsa.pub
 
-- create a file for your private key
+- Optional -create a file for your private key
   - touch id_rsa
-- open the file using your favorite editor and paste in the private key.  
+- Optional -Open the file using your favorite editor and paste in the private key.  
   - vi id_rsa
+
+- Create your script whith the name onboardinguser.sh in the Shell directory.
+  - nano onboardinguser.sh
+- To create and set public key for users in the server
+  - `sudo cp -R "/home/ubuntu/.ssh/authorized_keys" "/home/$user/.ssh/authorized_keys"`
+  
+![](image/project1Aux_Updatenewscript.png)  
+
+- After runing script there was lot of error and the code need to be updated  
+![](image/scriptUpdatedcode.png)
+
+- Then run script in Shell directory
+  - ./onbourdinguser.sh  
+
+![](image/project1Aux_Newuser_creat.png)  
+
+- Users created in home directory confirmation.
+
+![](image/project1Aux_Newuser_creat2in%20home.png)
+
+SSH to the instance using newly created user "bode"
+![](image/project1Aux_ssh_newuser.png)

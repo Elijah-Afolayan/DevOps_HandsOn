@@ -153,6 +153,9 @@ Repeat the same steps as for the Web Server, but instead of apps-lv create db-lv
 - Start Apache
     - sudo systemctl enable httpd
     - sudo systemctl start httpd
+
+![](image/project6_httpd_install.png) 
+
 - To install PHP and it’s depemdencies
     - sudo yum install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
     - sudo yum install yum-utils http://rpms.remirepo.net/enterprise/remi-release-8.rpm
@@ -177,7 +180,9 @@ Repeat the same steps as for the Web Server, but instead of apps-lv create db-lv
 - Configure SELinux Policies
     - sudo chown -R apache:apache /var/www/html/wordpress
     - sudo chcon -t httpd_sys_rw_content_t /var/www/html/wordpress -R
-    - sudo setsebool -P httpd_can_network_connect=1
+    - sudo setsebool -P httpd_can_network_connect=1  
+
+![](image/project6_WS_WP_install.png)
 - Step 4 — Install MySQL on your DB Server EC2
     - sudo yum update
     - sudo yum install mysql-server

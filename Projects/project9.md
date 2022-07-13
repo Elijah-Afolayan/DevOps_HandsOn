@@ -8,6 +8,8 @@ Step 1 – Install Jenkins server
 
 1. Create an AWS EC2 server based on Ubuntu Server 20.04 LTS and name it "Jenkins" and also open port 8080.
 
+![](image/project9_jenkins_spinup.png)  
+
 2.  Install JDK since Jenkins is a Java-based application  
     - sudo apt update  
     - sudo apt install default-jdk-headless  
@@ -74,7 +76,12 @@ Jenkins is a highly extendable application and there are 1400+ plugins available
                             ```SSH: Transferred 25 file(s)
                                Finished: SUCCESS```  
 
-
+![](image/project9_jenkins_console_output.png)
 
 - To make sure that the files in /mnt/apps have been udated – connect via SSH/Putty to your NFS server and check README.MD file
-    - cat /mnt/apps/README.md
+    - cat /mnt/apps/README.md  
+
+![](image/project9_jenkins_cat_Readme1.png)  
+
+![](image/project9_jenkins_cat_Readme.png)
+

@@ -32,7 +32,7 @@ Either uninstall Apache from an existing apache2 Load Balancer server, or create
 
 5.  Configure Nginx LB using Web Servers’ names defined in /etc/hosts. Open the default nginx configuration file
     - sudo vi /etc/nginx/nginx.conf
-
+![](image/project10)
 ```
 #insert following configuration into http section
 
@@ -58,3 +58,49 @@ server {
     - sudo systemctl status nginx
 
 ![](image/project10_Nginx_LB_UP_verify.png)  
+
+
+### REGISTER A NEW DOMAIN NAME AND CONFIGURE SECURED CONNECTION USING SSL/TLS CERTIFICATES  
+
+1. Register a new domain name with any registrar of your choice in any domain zone (e.g. .com, .net, .org, .edu, .info, .xyz or any other)
+    - register domain using AWS Route 53
+    ![](image/project10)
+
+2. Assign an Elastic IP to your Nginx LB server and 
+    - instead of using an elastic IP for cost you can use the Public IP of the Nginx_LB(nginx loadbalancer)  
+
+3. Associate your domain name with this Elastic IP
+    - configure A records to associated your LB public Ip with domain name.
+    - Check that your Web Servers can be reached from your browser using new domain name using HTTP protocol – http://<your-domain-name.com> 
+
+![](image/project10_NginxA_Name.png) 
+
+4. Configure Nginx to recognize your new domain name
+    - Update your nginx.conf with server_name www.<your-domain-name.com> instead of server_name www.domain.com 
+  
+
+5. Install certbot and request for an SSL/TLS certificate  
+
+6. Make sure snapd service is active and running
+    - sudo systemctl status snapd
+
+![](image/project10_Nginx_Snapd.png)  
+
+8. Install certbot
+    - sudo snap install --classic certbot  
+
+9. Request your certificate  
+    - sudo ln -s /snap/bin/certbot /usr/bin/certbot
+    - sudo certbot --nginx  
+
+![](image/project10_Nginx_TLS.png)
+
+10. Test secured access to your Web Solution by trying to reach https://<your-domain-name.com>  
+
+![](image/project10_Nginx_certificate.png)
+
+11. Set up periodical renewal of your SSL/TLS certificate using cronjob.  
+    - crontab -e
+    - update file with below text * */12 * * *   root /usr/bin/certbot renew > /dev/null 2>&1  
+
+![](image/project10_Nginx_cronjob.png)

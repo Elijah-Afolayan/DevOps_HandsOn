@@ -157,6 +157,8 @@ In common.yml playbook you will write configuration for repeatable, re-usable, a
         state: latest
 
 ````  
+---
+
 ![](image/project11_playbook_update.png)
 
 3. Feel free to update this playbook with following tasks:  

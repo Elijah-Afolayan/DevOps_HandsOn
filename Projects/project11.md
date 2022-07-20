@@ -156,14 +156,15 @@ In common.yml playbook you will write configuration for repeatable, re-usable, a
         name: wireshark
         state: latest
 
-        ````  
+````  
+![](image/project11_playbook_update.png)
 
 3. Feel free to update this playbook with following tasks:  
     - Create a directory and a file inside it
     - Change timezone on all servers
     - Run some shell script  
-
-![](image/project11_playbook_Built.png)
+    
+![](image/project11_playbook_update2.png)
 
 ### Step6 Update GIT with the latest code
 Now all of your directories and files live on your machine and you need to push changes made locally to GitHub.
@@ -183,13 +184,22 @@ In the real world, you will be working within a team of other DevOps engineers a
 
 6. Head back on your terminal, checkout from the feature branch into the master, and pull down the latest changes.
 
-7. Once your code changes appear in master branch – Jenkins will do its job and save all the files (build artifacts) to /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/ directory on Jenkins-Ansible server.
+7. Once your code changes appear in master branch – Jenkins will do its job and save all the files (build artifacts) to /var/lib/jenkins/jobs/ansible/builds/<build_number>/archive/ directory on Jenkins-Ansible server.  
 
-RUN FIRST ANSIBLE TEST
+![](image/project11_playbook_pullrequest.png)  
+
+![](image/project11_playbook_jenkinsfinal.png
 ### Step 7 – Run first Ansible test
 Execute ansible-playbook command and verify if your playbook actually works:
     - cd ansible-config-mgt
-    - ansible-playbook -i inventory/dev.yml playbooks/common.yml
+    - ansible-playbook -i inventory/dev.yml playbooks/common.yml 
+
+![](image/project11_playbook_RUn.png)   
+
+
+![](image/project11_playbook_RUn_updated.png)
+
+![](image/project11_playbook_jenkinsfinal.png)
 
 You can go to each of the servers and check if wireshark has been installed. 
     - which wireshark or 

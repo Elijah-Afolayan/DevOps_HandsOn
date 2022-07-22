@@ -108,9 +108,9 @@ Step 3 – Configure UAT Webservers with a role ‘Webserver’
     - Use an Ansible utility called ansible-galaxy inside ansible-config-mgt/roles directory (you need to create roles directory upfront)
         - mkdir roles
         - cd roles
-        - ansible-galaxy init webserver  
+        - ansible-galaxy init webserver   
 
-
+![](image/project12_UAT_server_createdTRee.png)
 
 3. Update your inventory ansible-config-mgt/inventory/uat.yml file with IP addresses of your 2 UAT Web servers
     - nano /home/ubuntu/ansible-config-mgt/inventory/uat.yml  
